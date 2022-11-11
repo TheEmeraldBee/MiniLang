@@ -8,13 +8,13 @@
     ".NETCoreApp,Version=v6.0": {
       "Test/1.0.0": {
         "dependencies": {
-          "MiniLang": "1.0.0"
+          "MiniLang": "0.1.0"
         },
         "runtime": {
           "Test.dll": {}
         }
       },
-      "MiniLang/1.0.0": {
+      "MiniLang/0.1.0": {
         "runtime": {
           "MiniLang.dll": {}
         }
@@ -27,7 +27,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "MiniLang/1.0.0": {
+    "MiniLang/0.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

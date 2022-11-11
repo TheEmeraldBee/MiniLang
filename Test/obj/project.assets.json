@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "MiniLang/1.0.0": {
+      "MiniLang/0.1.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
@@ -15,7 +15,7 @@
     }
   },
   "libraries": {
-    "MiniLang/1.0.0": {
+    "MiniLang/0.1.0": {
       "type": "project",
       "path": "../MiniLang/MiniLang.csproj",
       "msbuildProject": "../MiniLang/MiniLang.csproj"
@@ -23,7 +23,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "MiniLang >= 1.0.0"
+      "MiniLang >= 0.1.0"
     ]
   },
   "packageFolders": {
