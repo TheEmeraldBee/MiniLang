@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\Test\\Test.csproj": {}
+    "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\Test\\Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\MiniLang\\MiniLang.csproj": {
+    "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\MiniLang\\MiniLang.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\MiniLang\\MiniLang.csproj",
+        "projectUniqueName": "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\MiniLang\\MiniLang.csproj",
         "projectName": "MiniLang",
-        "projectPath": "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\MiniLang\\MiniLang.csproj",
+        "projectPath": "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\MiniLang\\MiniLang.csproj",
         "packagesPath": "C:\\Users\\brigh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\MiniLang\\obj\\",
+        "outputPath": "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\MiniLang\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\brigh\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -57,14 +57,14 @@
         }
       }
     },
-    "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\Test\\Test.csproj": {
+    "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\Test\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\Test\\Test.csproj",
+        "projectUniqueName": "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\Test\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\Test\\Test.csproj",
+        "projectPath": "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\Test\\Test.csproj",
         "packagesPath": "C:\\Users\\brigh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\Test\\obj\\",
+        "outputPath": "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\brigh\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -79,8 +79,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\MiniLang\\MiniLang.csproj": {
-                "projectPath": "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\MiniLang\\MiniLang.csproj"
+              "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\MiniLang\\MiniLang.csproj": {
+                "projectPath": "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\MiniLang\\MiniLang.csproj"
               }
             }
           }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\MiniLang\\MiniLang.csproj",
+      "projectUniqueName": "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\MiniLang\\MiniLang.csproj",
       "projectName": "MiniLang",
-      "projectPath": "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\MiniLang\\MiniLang.csproj",
+      "projectPath": "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\MiniLang\\MiniLang.csproj",
       "packagesPath": "C:\\Users\\brigh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\brigh\\OneDrive\\Documents\\C#Projects\\MiniLang\\MiniLang\\obj\\",
+      "outputPath": "C:\\Users\\brigh\\Documents\\C# Projects\\MiniLang\\MiniLang\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\brigh\\AppData\\Roaming\\NuGet\\NuGet.Config"
