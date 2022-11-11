@@ -47,7 +47,7 @@ public class DefaultWriter : IWriter
 
     public Result ReadAsciiString(Engine engine)
     {
-        var toRead = Console.ReadLine();
+        var toRead = Console.ReadLine() ?? "";
         foreach (var read in toRead)
         {
             if (!engine.MoveReader())

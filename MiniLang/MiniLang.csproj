@@ -4,6 +4,18 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <PackageVersion>0.1.0</PackageVersion>
+        <Title>Mini Lang</Title>
+        <Authors>Emerald</Authors>
+        <Description>An interpreted language written using C#</Description>
+        <Copyright>MIT</Copyright>
+        <RepositoryUrl>https://github.com/TheEmeraldBee/MiniLang</RepositoryUrl>
+        <RepositoryType>Public</RepositoryType>
+        <PackageTags>Interpreter</PackageTags>
+        <PackageProjectUrl>https://github.com/TheEmeraldBee/MiniLang</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+
     </PropertyGroup>
 
 </Project>

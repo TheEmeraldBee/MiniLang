@@ -62,6 +62,7 @@ public class Engine
     {
         Program = new int[programSize];
         Writer = writer;
+        _code = "";
     }
 
     public void AddModule(IModule module)
