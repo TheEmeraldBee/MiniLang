@@ -16,4 +16,5 @@ This is a passion project for me, and am not sure how long my plans will go till
 and I'm interested, I will be adding to the language.
 
 ## Installation:
-You can install this project through [Nuget!](https://www.nuget.org/packages/MiniLang/)
+You can install this project through [Nuget!](https://www.nuget.org/packages/MiniLang/) or by cloning the repository using
+your favorite IDE!
