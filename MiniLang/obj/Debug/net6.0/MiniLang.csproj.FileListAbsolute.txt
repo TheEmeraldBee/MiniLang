@@ -1,0 +1,12 @@
+C:\Users\brigh\OneDrive\Documents\C#Projects\MiniLang\MiniLang\bin\Debug\net6.0\MiniLang.deps.json
+C:\Users\brigh\OneDrive\Documents\C#Projects\MiniLang\MiniLang\bin\Debug\net6.0\MiniLang.dll
+C:\Users\brigh\OneDrive\Documents\C#Projects\MiniLang\MiniLang\bin\Debug\net6.0\MiniLang.pdb
+C:\Users\brigh\OneDrive\Documents\C#Projects\MiniLang\MiniLang\obj\Debug\net6.0\MiniLang.csproj.AssemblyReference.cache
+C:\Users\brigh\OneDrive\Documents\C#Projects\MiniLang\MiniLang\obj\Debug\net6.0\MiniLang.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brigh\OneDrive\Documents\C#Projects\MiniLang\MiniLang\obj\Debug\net6.0\MiniLang.AssemblyInfoInputs.cache
+C:\Users\brigh\OneDrive\Documents\C#Projects\MiniLang\MiniLang\obj\Debug\net6.0\MiniLang.AssemblyInfo.cs
+C:\Users\brigh\OneDrive\Documents\C#Projects\MiniLang\MiniLang\obj\Debug\net6.0\MiniLang.csproj.CoreCompileInputs.cache
+C:\Users\brigh\OneDrive\Documents\C#Projects\MiniLang\MiniLang\obj\Debug\net6.0\MiniLang.dll
+C:\Users\brigh\OneDrive\Documents\C#Projects\MiniLang\MiniLang\obj\Debug\net6.0\refint\MiniLang.dll
+C:\Users\brigh\OneDrive\Documents\C#Projects\MiniLang\MiniLang\obj\Debug\net6.0\MiniLang.pdb
+C:\Users\brigh\OneDrive\Documents\C#Projects\MiniLang\MiniLang\obj\Debug\net6.0\ref\MiniLang.dll
