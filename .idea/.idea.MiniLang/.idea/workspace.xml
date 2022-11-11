@@ -4,7 +4,7 @@
     <projectFile>MiniLang/MiniLang.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07379a53-4134-4c5b-9766-40ae95ecdd22" name="Changes" comment="" />
+    <list default="true" id="07379a53-4134-4c5b-9766-40ae95ecdd22" name="Changes" comment="Initial Commit with functional language" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/974fa14c57bab8fe29f1bddd39b1a6548b9cc8cf9e0ef5e670c2407a56d9/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MiniLang/obj/Debug/net6.0/.NETCoreApp,Version=v6.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -20,6 +21,7 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2HNI2omwq538MGfhYuHpeDUX6OH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -62,34 +64,36 @@
       <updated>1668118910716</updated>
       <workItem from="1668118911242" duration="122000" />
       <workItem from="1668119092998" duration="15209000" />
-      <workItem from="1668177831876" duration="1063000" />
+      <workItem from="1668177831876" duration="1470000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit with functional language">
+      <created>1668179277508</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668179277508</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/MiniLang/Engine.cs</url>
-          <line>84</line>
-          <properties documentPath="C:\Users\brigh\OneDrive\Documents\C#Projects\MiniLang\MiniLang\Engine.cs" initialLine="84" containingFunctionPresentation="method 'RunCommand'">
-            <startOffsets>
-              <option value="2366" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2382" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Initial Commit with functional language" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit with functional language" />
   </component>
 </project>
