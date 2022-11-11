@@ -1,4 +1,13 @@
-﻿using MiniLang;
+﻿using MiniLang.Core;
+using MiniLang.Internal;
 
-var engine = new Engine();
-engine.HandleCodeFile("C:/Users/brigh/Documents/C# Projects/MiniLang/Examples/numberGuesser.minilang");
+var engine = new Engine(new DefaultWriter());
+engine.AddLibrary(new DefaultLibrary());
+
+while (true)
+{
+    Console.Write("MiniLang ::: ");
+    engine.Run(Console.ReadLine() ?? string.Empty);
+    Console.WriteLine();
+}
+

@@ -26,11 +26,13 @@ $2 *66 B
 $1 *65 A
 $0 *32 SPACE
 
-$90 *5
+$90 *5 { # Tries }
 
-$98 *0
+{ # Needed Numbers For Display }
+$98 *0 
 $99 *100
 
+{ Guess Number }
 $100 ?100/
 
 {Exit Code}
