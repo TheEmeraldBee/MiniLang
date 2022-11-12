@@ -42,6 +42,39 @@ public class StringModule : IModule
                 engine.Writer.WriteString(output);
 
                 break;
+            case 'S':
+                var stringSet = "";
+                
+                if (!engine.MoveReader())
+                {
+                    return new Result(false, "ERROR 'S' Expected a '\"' pair after it.");
+                }
+
+                if (engine.CurrentCommand != '"')
+                {
+                    return new Result(false, "ERROR 'S' Expected a '\"' pair after it.");
+                }
+
+                while (true)
+                {
+                    if (!engine.MoveReader())
+                    {
+                        return new Result(false, "ERROR: 'S' Expected a '\"' pair and only found one.");
+                    }
+                    if (engine.CurrentCommand == '"') break;
+
+                    stringSet += engine.CurrentCommand;
+                }
+
+                var initPos = engine.GetIdx();
+                foreach (var character in stringSet)
+                {
+                    engine.Set(character);
+                    engine.MoveIdx(1);
+                }
+                engine.SetIdx(initPos);
+                
+                break;
         }
 
         return new Result(true);

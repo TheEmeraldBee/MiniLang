@@ -48,6 +48,7 @@ public class DefaultWriter : IWriter
     public Result ReadAsciiString(Engine engine)
     {
         var toRead = Console.ReadLine() ?? "";
+        var startIdx = engine.GetIdx();
         foreach (var read in toRead)
         {
             if (!engine.MoveReader())
@@ -57,6 +58,7 @@ public class DefaultWriter : IWriter
 
             engine.Set(read);
         }
+        engine.SetIdx(startIdx);
 
         return new Result(true);
     }
