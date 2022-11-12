@@ -5,7 +5,7 @@
 > Although this language is mostly a joke, I am currently programming it with many features planned.
 
 #### These Plans Include:
-- [ ] Functions
+- [X] Functions
 - [ ] Importing Files
 - [x] Error Handling Through Try - Except Blocks
 - [x] Better Error Logging
@@ -24,5 +24,5 @@ This is a passion project for me, and am not sure how long my plans will go till
 and I'm interested, and I will be adding to the language.
 
 ## Installation:
-You can install this project through [Nuget!](https://www.nuget.org/packages/MiniLang/) or by cloning the repository using
+You can install this project by cloning the repository using
 your favorite IDE!

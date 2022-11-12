@@ -1,7 +1,5 @@
 namespace MiniLang.Core;
 
-//TODO: END statement that ends the game
-//TODO: Functions!
 //TODO: Importing Files!
 
 public class Engine
@@ -179,29 +177,6 @@ public class Engine
         }
 
         return null;
-    }
-
-    public bool GetWordAfter(string word)
-    {
-        word = word.Remove(0);
-        if (!MoveReader()) { return false; }
-        
-        var startIdx = GetCodeIdx();
-        foreach (var letter in word)
-        {
-            if (!MoveReader())
-            {
-                SetReader(startIdx);
-                return false;
-            }
-
-            if (letter != CurrentCommand)
-            {
-                return false;
-            }
-        }
-
-        return true;
     }
 
     public int GetCodeIdx()

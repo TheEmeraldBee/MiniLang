@@ -32,6 +32,13 @@ public class BasicsModule : IModule
                     }
                 }
                 break;
+            
+            case 'E':
+                if (!engine.MoveReader()) break;
+                if (engine.CurrentCommand != 'N') break;
+                if (!engine.MoveReader()) break;
+                if (engine.CurrentCommand != 'D') break;
+                return new Result(false);
         }
 
         return new Result(true);
