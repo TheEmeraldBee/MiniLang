@@ -1,23 +1,21 @@
 namespace MiniLang.Core;
 
-//TODO: Error Handling For Inside Program
-//TODO: Loop That Runs Specific Num Of Times
 //TODO: END statement that ends the game
+//TODO: Functions!
+//TODO: Importing Files!
 
 public class Engine
 {
     private int[] _program;
     private int _idx;
     public readonly IWriter Writer;
-    public List<IModule> Modules = new ();
+    private List<IModule> _modules = new ();
 
-    public int Value;
+    private int _value;
 
     private int _codeIdx;
     private string _code;
     public char CurrentCommand = ' ';
-
-    private bool _running;
 
     public Engine(IWriter writer, int programSize = 4096)
     {
@@ -28,7 +26,7 @@ public class Engine
 
     public void Set(int value, bool overwrite = true)
     {
-        Value = value;
+        _value = value;
         
         if (!overwrite) return;
         
@@ -47,14 +45,14 @@ public class Engine
         Update();
     }
 
-    public void Update()
+    private void Update()
     {
-        Value = _program[_idx];
+        _value = _program[_idx];
     }
 
     public int Get()
     {
-        return Value;
+        return _value;
     }
 
     public int GetIdx()
@@ -64,14 +62,14 @@ public class Engine
 
     public void AddModule(IModule module)
     {
-        Modules.Add(module);
+        _modules.Add(module);
     }
 
     public void AddLibrary(ILibrary lib)
     {
         foreach (var module in lib.GetLibraryModules())
         {
-            Modules.Add(module);
+            _modules.Add(module);
         }
     }
 
@@ -81,7 +79,6 @@ public class Engine
         
         if (_codeIdx >= _code.Length)
         {
-            _running = false;
             return false;
         }
 
@@ -105,21 +102,19 @@ public class Engine
     public Result Run(string code)
     {
         _code = code + "\n";
-        _running = true;
-        
+
         // Used To Set Up The Reader
         SetReader(0);
 
-        while (_running)
+        while (true)
         {
             var res = HandleCommand();
             if (!res.QuerySuccess())
             {
-                Writer.Message(res.GetError());
-                break;
+                return res;
             }
 
-            if (!MoveReader()) { _running = false; }
+            if (!MoveReader()) { break; }
         }
 
         return new Result(true);
@@ -129,7 +124,7 @@ public class Engine
     {
         if (Constants.IgnoreChars.Contains(CurrentCommand)) { return new Result(true); }
         
-        foreach (var module in Modules)
+        foreach (var module in _modules)
         {
             var res = module.HandleCommand(this);
             if (!res.QuerySuccess())
@@ -145,7 +140,7 @@ public class Engine
     {
         if (Constants.IgnoreChars.Contains(CurrentCommand)) return new Result(true);
 
-        foreach (var module in Modules)
+        foreach (var module in _modules)
         {
             var res = module.HandleSkip(this);
             if (!res.QuerySuccess())
@@ -209,13 +204,19 @@ public class Engine
         return true;
     }
 
-    public void Close()
-    {
-        _running = false;
-    }
-
     public int GetCodeIdx()
     {
         return _codeIdx;
+    }
+
+    public string GetCodeString()
+    {
+        return _code;
+    }
+
+    public void SetContext(string code, int readerLoc)
+    {
+        _code = code;
+        _codeIdx = readerLoc;
     }
 }

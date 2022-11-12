@@ -8,6 +8,10 @@ engine.AddModule(new DebugModule());
 while (true)
 {
     Console.Write("MiniLang ::: ");
-    engine.Run(Console.ReadLine() ?? string.Empty);
+    var res = engine.Run(Console.ReadLine() ?? string.Empty);
+    if (!res.QuerySuccess())
+    {
+        engine.Writer.Message(res.GetError());
+    }
     Console.WriteLine();
 }

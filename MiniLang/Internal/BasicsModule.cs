@@ -39,6 +39,20 @@ public class BasicsModule : IModule
     
     public Result HandleSkip(Engine engine)
     {
+        switch (engine.CurrentCommand)
+        {
+            // Comment
+            case '{':
+                while (engine.CurrentCommand != '}')
+                {
+                    if (!engine.MoveReader())
+                    {
+                        return new Result(false, "ERROR: Expected comment end, but did not find it.");
+                    }
+                }
+                break;
+        }
+
         return new Result(true);
     }
 }

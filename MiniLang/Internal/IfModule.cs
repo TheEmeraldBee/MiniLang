@@ -121,11 +121,12 @@ public class IfModule : IModule
 
                         if (!canRun)
                         {
-                            Console.WriteLine("Else!");
                             engine.HandleCommand();
                         }
                     }
                 }
+
+                engine.MoveReader();
 
                 break;
         }
@@ -144,6 +145,9 @@ public class IfModule : IModule
                     if (!engine.MoveReader())
                         return new Result(false, "ERROR: Expected ) but didn't receive it for if.");
                 }
+
+                engine.MoveReader();
+
                 break;
         }
 

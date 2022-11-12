@@ -26,7 +26,7 @@ $1 _
 
 ($1 => T2 | P"But, you Did A Boo Boo So... ")
 
-$3 *0 {Current Winner is AI}
+$3 *T0 {Current Winner is AI}
 
 ($2 = $1 | P"It Was A Tie!" $3 *1)
 ($1 = T0 | ($2 = T2 | P"You Win!" $3 *1))

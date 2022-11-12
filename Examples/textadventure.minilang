@@ -1,0 +1,35 @@
+{
+By: TheEmeraldBee
+Required Libraries: Default
+Required Modules: N/A
+
+Description:
+A Good Showing Of All The Features Of MiniLang,
+but in game format!
+
+To Try Me, Change The Path In Program.cs in the test project to the absolute path of this file!
+}
+
+{A function that sets the current index to a number input, but checks for errors!}
+F"RequireInput" (
+    *1000 {Set The Active Value To 1000, for checking the input}
+    
+    {While Input Is 1000}
+    W T1000 = [
+        {Force Player To Input Number}
+        : _ | P"Please Input A Number: " ;
+    ]
+)
+
+P"Would You Like To Go, " / P"Left: 0 or Right: 1? : "
+$0 R"RequireInput" {Set idx 0 to the result of require input}
+
+$0./
+
+{If Left}
+( $0 = T0 |
+P"You Died!"
+
+{Else} |
+P"You Win! Take My Cake!" //
+)

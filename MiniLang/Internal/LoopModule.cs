@@ -42,6 +42,8 @@ public class LoopModule : IModule
                     engine.SetReader(loopStart);
                 }
 
+                engine.MoveReader();
+
                 break;
             case 'L':
                 var times = engine.GetNumAfter();
@@ -82,6 +84,9 @@ public class LoopModule : IModule
                         return new Result(true, "ERROR: Expected ] but didn't receive it for loop.");
                     }
                 }
+
+                engine.MoveReader();
+                
                 break;
             
             case 'W':
@@ -183,7 +188,9 @@ public class LoopModule : IModule
                     
                     engine.SetReader(loopStart);
                 }
-                
+
+                engine.MoveReader();
+
                 break;
         }
 
@@ -202,6 +209,8 @@ public class LoopModule : IModule
                         return new Result(false, "ERROR: Expected ] but didn't recieve it for loop");
                     }
                 }
+
+                engine.MoveReader();
 
                 break;
         }
