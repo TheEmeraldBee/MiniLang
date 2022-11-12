@@ -69,6 +69,7 @@ public class IfModule : IModule
                     _ => start == end
                 };
 
+                // If
                 while (engine.CurrentCommand != ')')
                 {
                     if (!engine.MoveReader())
@@ -76,9 +77,31 @@ public class IfModule : IModule
                         return new Result(false, "ERROR: Expected ) but didn't receive it for if.");
                     }
 
+                    if (engine.CurrentCommand == '|')
+                    {
+                        break;
+                    }
+
                     if (canRun)
                     {
                         engine.HandleCommand();
+                    }
+                }
+
+                // Else
+                if (engine.CurrentCommand == '|')
+                {
+                    while (engine.CurrentCommand != ')')
+                    {
+                        if (!engine.MoveReader())
+                        {
+                            return new Result(false, "ERROR: Expected ) but didn't receive it for if.");
+                        }
+
+                        if (!canRun)
+                        {
+                            engine.HandleCommand();
+                        }
                     }
                 }
 
