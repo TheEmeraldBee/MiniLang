@@ -1,48 +1,6 @@
-using System.Reflection;
-using MiniLang.Internal;
-
 namespace MiniLang.Core;
 
-/*
-    * The Language:
-    * Mini Lang Uses 20 characters some with multiple uses.
-    * > moves one location to the right >num moves num to the right
-    * < moves one location to the left <num moves num to the left
-    * - removes one value from that location -num removes num from value
-    * + adds one value to that location +num adds num to value
-    * ! sets number to negative version of self
-    * * sets number to next number typed (Ex: *123 Can't: * 123 or *1 23)
-    * $ sets position to next number typed ($123 goes to pos
-    *                                       123 remember 0 is start) and if no number typed, goes to 0
-    * ? sets number to random int from 0 to number after it
-    *              Default 5
-    * . outputs number at that location
-    * ^ outputs ASCII char at that location
-    * , sets location unicode number input
-    * & sets location and locations after it to unicode numbers
-    * _ sets location to number input
-    * / new line
-    * [ opens loop
-    * ] ends loop
-    * ( start if
-    * = check equal
-    * => check greater
-    * =< check less
-    * ) end if
-    * | if set location
-    *             pos 2 == pos 4 result prints 2 if true
-    * if example (>> = >> | > ++ .)
-    *
-    * comments that need any of the lang chars can be made with {
-    * and will end at }
-    *
-    * Lang 2.0:
-    * Module System. Every character handle is inside of a module interface.
-    * Program is a int[]
-    * Single Characters as functions and expressions.
-    * Program can handle errors through E function.
-    * Comments are still { and } and MUST be used for the code, any unrecognized values throw errors.
-*/
+//TODO: Add else and work on Error Handling For Inside Program
 
 public class Engine
 {
@@ -156,6 +114,7 @@ public class Engine
             if (!res.QuerySuccess())
             {
                 Writer.Message(res.GetError());
+                break;
             }
 
             if (!MoveReader()) { _running = false; }
