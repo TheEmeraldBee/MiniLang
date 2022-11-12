@@ -16,7 +16,7 @@ $98 *0
 $99 *100
 
 { Guess Number }
-$100 ?100/
+$100 ?100
 
 {Exit Code}
 $89*0
@@ -31,12 +31,12 @@ P"Guess A Number Between"/ P"0 & 100!: "
 
 { If Greater }
 ($101 => $100 | 
-    P"To High!"/
+    P"Too High!"/
 )
 
 { If Less }
 ($101 =< $100 | 
-    P"To Low!"/
+    P"Too Low!"/
 )
 
 { If Equal Exit Game and set exit code }
@@ -51,4 +51,4 @@ $90
 ]
 
 { If Exit Code Is 0, Loss }
-($89 = $666*0 | P"You Ran Out Of Tries!" / P"You Lose!"/)
+($89 = $666*0 | P"You Ran Out Of Tries!" / P"You Lose! The Number Was " $100. /)

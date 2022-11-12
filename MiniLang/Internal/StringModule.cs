@@ -11,7 +11,7 @@ public class StringModule : IModule
             case 'C':
                 if (!engine.MoveReader())
                 {
-                    return new Result(false, "ERROR: 'L' expected a character after it.");
+                    return new Result(false, "ERROR: 'C' expected a character after it.");
                 }
                 engine.Set(engine.CurrentCommand);
                 break;

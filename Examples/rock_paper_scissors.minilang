@@ -1,0 +1,45 @@
+{
+By: TheEmeraldBee
+Required Libraries: Default
+Required Modules: N/A
+
+Description:
+Play Rock Paper Scissors!
+
+To Try Me, Change The Path In Program.cs in the test project to the absolute path of this file!
+}
+
+{ Game Loop }
+$100 *1 {We're Playing!}
+[
+$2 ?2
+
+P"Pick An Attack!" / P"Rock: 0, Paper: 1, Or Scissors: 2!: "
+$1 _
+
+{Printing AI's Choice}
+($2 = T0 | P"Opponent Picked Rock"/)
+($2 = T1 | P"Opponent Picked Paper"/)
+($2 = T2 | P"Opponent Picked Scissors"/)
+
+{Who Wins}
+
+($1 => T2 | P"But, you Did A Boo Boo So... ")
+
+$3 *0 {Current Winner is AI}
+
+($2 = $1 | P"It Was A Tie!" $3 *100)
+($1 = T0 | ($2 = T2 | P"You Win!" $3 *1))
+($1 = T1 | ($2 = T0 | P"You Win!" $3 *1))
+($1 = T2 | ($2 = T1 | P"You Win!" $3 *1))
+
+($3 = T0 | P"You Lose!")
+
+// {Space Stuff Out}
+
+{Are We Done}
+P"Do You Want To Play Again?"/P"No: 0 Yes: 1: "
+$1 _
+($1 = T0 | $100 *0)
+
+$100 ]
