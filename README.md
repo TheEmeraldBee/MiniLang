@@ -7,9 +7,17 @@
 #### These Plans Include:
 - [ ] Functions
 - [ ] Importing Files
-- [ ] Error Handling Through Try - Except Blocks
-- [ ] Better Error Logging
+- [x] Error Handling Through Try - Except Blocks
+- [x] Better Error Logging
 - Many, many optimizations and fixes to the language.
+
+## Documentation
+>This will be added soon, but due to the rapid development at current times, I am unable to predict the future of the project
+> and will be waiting to add this for a couple of days. However, if you still want to try it, use the SimpleDefaultLibrary and
+> look up a tutorial for Brainfuck, as the SimpleDefaultLibrary is very similar. The major difference is if you want to do
+> something more than once, type command_ and replace command with a brainfuck command, and the underscore with a number! 
+> 
+> EX: +5
 
 #### Note:
 This is a passion project for me, and am not sure how long my plans will go till, but as long as people are interested,
