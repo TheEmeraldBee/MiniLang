@@ -141,6 +141,23 @@ public class Engine
         return new Result(true);
     }
 
+    public Result HandleSkip()
+    {
+        if (Constants.IgnoreChars.Contains(CurrentCommand)) return new Result(true);
+
+        foreach (var module in Modules)
+        {
+            var res = module.HandleSkip(this);
+            if (!res.QuerySuccess())
+            {
+                return res;
+            }
+        }
+
+        return new Result(true);
+
+    }
+
     public int? GetNumAfter()
     {
         var number = "";
@@ -167,6 +184,29 @@ public class Engine
         }
 
         return null;
+    }
+
+    public bool GetWordAfter(string word)
+    {
+        word = word.Remove(0);
+        if (!MoveReader()) { return false; }
+        
+        var startIdx = GetCodeIdx();
+        foreach (var letter in word)
+        {
+            if (!MoveReader())
+            {
+                SetReader(startIdx);
+                return false;
+            }
+
+            if (letter != CurrentCommand)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public void Close()

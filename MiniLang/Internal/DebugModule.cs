@@ -18,4 +18,9 @@ public class DebugModule : IModule
 
         return new Result(true);
     }
+    
+    public Result HandleSkip(Engine engine)
+    {
+        return new Result(true);
+    }
 }

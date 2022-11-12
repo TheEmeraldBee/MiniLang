@@ -98,6 +98,15 @@ public class IfModule : IModule
                             return res;
                         }
                     }
+                    else
+                    {
+                        // Fix Nesting
+                        var skipRes = engine.HandleSkip();
+                        if (!skipRes.QuerySuccess())
+                        {
+                            return skipRes;
+                        }
+                    }
                 }
 
                 // Else
@@ -112,11 +121,29 @@ public class IfModule : IModule
 
                         if (!canRun)
                         {
+                            Console.WriteLine("Else!");
                             engine.HandleCommand();
                         }
                     }
                 }
 
+                break;
+        }
+
+        return new Result(true);
+    }
+
+    public Result HandleSkip(Engine engine)
+    {
+        switch (engine.CurrentCommand)
+        {
+            // If Statement
+            case '(':
+                while (engine.CurrentCommand != ')')
+                {
+                    if (!engine.MoveReader())
+                        return new Result(false, "ERROR: Expected ) but didn't receive it for if.");
+                }
                 break;
         }
 

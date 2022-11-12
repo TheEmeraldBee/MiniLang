@@ -189,4 +189,23 @@ public class LoopModule : IModule
 
         return new Result(true);
     }
+    
+    public Result HandleSkip(Engine engine)
+    {
+        switch (engine.CurrentCommand)
+        {
+            case '[':
+                while (engine.CurrentCommand != ']')
+                {
+                    if (!engine.MoveReader())
+                    {
+                        return new Result(false, "ERROR: Expected ] but didn't recieve it for loop");
+                    }
+                }
+
+                break;
+        }
+
+        return new Result(true);
+    }
 }

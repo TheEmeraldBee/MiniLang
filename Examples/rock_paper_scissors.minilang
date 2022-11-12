@@ -28,7 +28,7 @@ $1 _
 
 $3 *0 {Current Winner is AI}
 
-($2 = $1 | P"It Was A Tie!" $3 *100)
+($2 = $1 | P"It Was A Tie!" $3 *1)
 ($1 = T0 | ($2 = T2 | P"You Win!" $3 *1))
 ($1 = T1 | ($2 = T0 | P"You Win!" $3 *1))
 ($1 = T2 | ($2 = T1 | P"You Win!" $3 *1))

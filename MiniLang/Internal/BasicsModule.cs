@@ -16,12 +16,12 @@ public class BasicsModule : IModule
                 engine.MoveIdx(-(engine.GetNumAfter() ?? 1));
                 break;
             case '+':
-                engine.Set(engine.Get() + (engine.GetNumAfter() ?? 1));;
+                engine.Set(engine.Get() + (engine.GetNumAfter() ?? 1));
                 break;
             case '-':
-                engine.Set(engine.Get() - (engine.GetNumAfter() ?? 1));;
+                engine.Set(engine.Get() - (engine.GetNumAfter() ?? 1));
                 break;
-            
+
             // Comment
             case '{':
                 while (engine.CurrentCommand != '}')
@@ -34,6 +34,11 @@ public class BasicsModule : IModule
                 break;
         }
 
+        return new Result(true);
+    }
+    
+    public Result HandleSkip(Engine engine)
+    {
         return new Result(true);
     }
 }
