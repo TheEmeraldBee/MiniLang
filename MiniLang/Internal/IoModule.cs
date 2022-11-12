@@ -8,7 +8,6 @@ public class IoModule : IModule
     {
         switch (engine.CurrentCommand)
         {
-
             // Output
             case '/':
                 engine.Writer.NewLine(engine);

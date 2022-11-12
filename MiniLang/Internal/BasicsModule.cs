@@ -10,16 +10,16 @@ public class BasicsModule : IModule
         {
             // Changing
             case '>':
-                engine.Idx += engine.GetNumAfter() ?? 1;
+                engine.MoveIdx(engine.GetNumAfter() ?? 1);
                 break;
             case '<':
-                engine.Idx -= engine.GetNumAfter() ?? 1;
+                engine.MoveIdx(-(engine.GetNumAfter() ?? 1));
                 break;
             case '+':
-                engine.Program[engine.Idx] += engine.GetNumAfter() ?? 1;
+                engine.Set(engine.Get() + (engine.GetNumAfter() ?? 1));;
                 break;
             case '-':
-                engine.Program[engine.Idx] -= engine.GetNumAfter() ?? 1;
+                engine.Set(engine.Get() - (engine.GetNumAfter() ?? 1));;
                 break;
             
             // Comment

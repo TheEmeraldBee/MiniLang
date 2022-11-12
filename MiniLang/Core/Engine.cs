@@ -46,11 +46,12 @@ namespace MiniLang.Core;
 
 public class Engine
 {
-    public int[] Program;
+    private int[] _program;
+    private int _idx;
     public readonly IWriter Writer;
     public List<IModule> Modules = new ();
 
-    public int Idx;
+    public int Value;
 
     private int _codeIdx;
     private string _code;
@@ -60,9 +61,45 @@ public class Engine
 
     public Engine(IWriter writer, int programSize = 4096)
     {
-        Program = new int[programSize];
+        _program = new int[programSize];
         Writer = writer;
         _code = "";
+    }
+
+    public void Set(int value, bool overwrite = true)
+    {
+        Value = value;
+        
+        if (!overwrite) return;
+        
+        _program[_idx] = value;
+    }
+    
+    public void MoveIdx(int dist)
+    {
+        _idx += dist;
+        Update();
+    }
+
+    public void SetIdx(int idx)
+    {
+        _idx = idx;
+        Update();
+    }
+
+    public void Update()
+    {
+        Value = _program[_idx];
+    }
+
+    public int Get()
+    {
+        return Value;
+    }
+
+    public int GetIdx()
+    {
+        return _idx;
     }
 
     public void AddModule(IModule module)
@@ -92,7 +129,7 @@ public class Engine
         return true;
     }
 
-    public bool SetReader(int location=0)
+    public bool SetReader(int location)
     {
         _codeIdx = location;
         
@@ -107,12 +144,12 @@ public class Engine
 
     public Result Run(string code)
     {
-        _code = code;
+        _code = code + "\n";
         _running = true;
         
         // Used To Set Up The Reader
-        SetReader();
-        
+        SetReader(0);
+
         while (_running)
         {
             var res = HandleCommand();

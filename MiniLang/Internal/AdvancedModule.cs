@@ -10,13 +10,13 @@ public class AdvancedModule : IModule
         {
             // Setting
             case '!':
-                engine.Program[engine.Idx] = -engine.Program[engine.Idx];
+                engine.Set(-engine.Get());
                 break;
             case '$':
-                engine.Idx = engine.GetNumAfter() ?? 0;
+                engine.SetIdx(engine.GetNumAfter() ?? 0);
                 break;
             case '*':
-                engine.Program[engine.Idx] = engine.GetNumAfter() ?? 0;
+                engine.Set(engine.GetNumAfter() ?? 0);
                 break;
         }
 

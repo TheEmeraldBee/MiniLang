@@ -9,4 +9,5 @@ public interface IWriter
     public Result ReadNumber(Engine engine);
     public void ReadAsciiCharacter(Engine engine);
     public Result ReadAsciiString(Engine engine);
+    public void WriteString(string value);
 }

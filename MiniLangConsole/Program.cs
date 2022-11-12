@@ -3,6 +3,7 @@ using MiniLang.Internal;
 
 var engine = new Engine(new DefaultWriter());
 engine.AddLibrary(new DefaultLibrary());
+engine.AddModule(new DebugModule());
 
 while (true)
 {

@@ -6,12 +6,12 @@ public class DefaultWriter : IWriter
 {
     public void Print(Engine engine)
     {
-        Console.Write(engine.Program[engine.Idx]);
+        Console.Write(engine.Get());
     }
 
     public void PrintAscii(Engine engine)
     {
-        Console.Write((char) engine.Program[engine.Idx]);
+        Console.Write((char)engine.Get());
     }
 
     public void NewLine(Engine engine)
@@ -30,7 +30,7 @@ public class DefaultWriter : IWriter
         var toRead = Console.ReadLine();
         if (int.TryParse(toRead, out var result))
         {
-            engine.Program[engine.Idx] = result;
+            engine.Set(result);
         }
         else
         {
@@ -42,7 +42,7 @@ public class DefaultWriter : IWriter
 
     public void ReadAsciiCharacter(Engine engine)
     {
-        engine.Program[engine.Idx] = (Console.ReadLine() ?? "0")[0];
+        engine.Set((Console.ReadLine() ?? "0")[0]);
     }
 
     public Result ReadAsciiString(Engine engine)
@@ -55,9 +55,14 @@ public class DefaultWriter : IWriter
                 return new Result(false, "ERROR: Reading Input Went Past Maximum Program Size.");
             }
 
-            engine.Program[engine.Idx] = read;
+            engine.Set(read);
         }
 
         return new Result(true);
+    }
+
+    public void WriteString(string value)
+    {
+        Console.Write(value);
     }
 }

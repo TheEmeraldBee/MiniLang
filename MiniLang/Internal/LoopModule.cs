@@ -12,7 +12,7 @@ public class LoopModule : IModule
                 var loopStart = engine.GetCodeIdx();
                 while (true)
                 {
-                    if (engine.Program[engine.Idx] == 0)
+                    if (engine.Get() == 0)
                     {
                         while (engine.CurrentCommand != ']')
                         {

@@ -22,7 +22,7 @@ public class IfModule : IModule
                     engine.HandleCommand();
                 }
 
-                var start = engine.Program[engine.Idx];
+                var start = engine.Get();
 
                 if (!engine.MoveReader())
                 {
@@ -59,7 +59,7 @@ public class IfModule : IModule
                     engine.HandleCommand();
                 }
                 
-                var end = engine.Program[engine.Idx];
+                var end = engine.Get();
 
                 // The Rest Of The If
                 var canRun = type switch
