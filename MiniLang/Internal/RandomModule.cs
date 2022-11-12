@@ -11,7 +11,7 @@ public class RandomModule : IModule
             case '?':
                 engine.Set(
                     new Random(DateTime.Now.Millisecond * DateTime.Now.Minute)
-                        .Next(0, engine.GetNumAfter() ?? 5));
+                        .Next(0, (engine.GetNumAfter() ?? 5) + 1));
                 break;
         }
 
