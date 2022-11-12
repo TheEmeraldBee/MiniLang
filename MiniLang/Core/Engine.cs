@@ -2,9 +2,6 @@ namespace MiniLang.Core;
 
 //TODO: Error Handling For Inside Program
 //TODO: Loop That Runs Specific Num Of Times
-//TODO: Break statement that leaves loop
-//TODO: Continue statement that goes back to beginning of loop and checks condition
-//TODO: Condition loop, an if statement then a loop. EX: I $0 = $1 [ - ] .  This Will Run Until It $0 equals $1
 //TODO: END statement that ends the game
 
 public class Engine

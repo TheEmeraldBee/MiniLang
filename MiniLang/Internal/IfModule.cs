@@ -42,6 +42,13 @@ public class IfModule : IModule
                     {
                         return new Result(false, "ERROR: If statement incomplete expected other part of if or '|'");
                     }
+                } else if (engine.CurrentCommand == '!')
+                {
+                    type = 3;
+                    if (!engine.MoveReader())
+                    {
+                        return new Result(false, "ERROR: If statement incomplete expected other part of if or '|'");
+                    }
                 } else
                 {
                     type = 0;
@@ -66,6 +73,7 @@ public class IfModule : IModule
                 {
                     1 => start > end,
                     2 => start < end,
+                    3 => start != end,
                     _ => start == end
                 };
 
@@ -84,7 +92,11 @@ public class IfModule : IModule
 
                     if (canRun)
                     {
-                        engine.HandleCommand();
+                        var res = engine.HandleCommand();
+                        if (!res.QuerySuccess())
+                        {
+                            return res;
+                        }
                     }
                 }
 
