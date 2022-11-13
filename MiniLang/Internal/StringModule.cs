@@ -8,13 +8,6 @@ public class StringModule : IModule
     {
         switch (engine.CurrentCommand)
         {
-            case 'C':
-                if (!engine.MoveReader())
-                {
-                    return new Result(false, "ERROR: 'C' expected a character after it.");
-                }
-                engine.Set(engine.CurrentCommand);
-                break;
             case 'P':
                 var output = "";
 
@@ -82,6 +75,53 @@ public class StringModule : IModule
 
     public Result HandleSkip(Engine engine)
     {
+        switch (engine.CurrentCommand)
+        {
+            case 'P':
+
+                if (!engine.MoveReader())
+                {
+                    return new Result(false, "ERROR 'P' Expected a '\"' pair after it.");
+                }
+
+                if (engine.CurrentCommand != '"')
+                {
+                    return new Result(false, "ERROR 'P' Expected a '\"' pair after it.");
+                }
+
+                while (true)
+                {
+                    if (!engine.MoveReader())
+                    {
+                        return new Result(false, "ERROR: 'P' Expected a '\"' pair and only found one.");
+                    }
+                    if (engine.CurrentCommand == '"') break;
+                }
+
+                break;
+            case 'S':
+                if (!engine.MoveReader())
+                {
+                    return new Result(false, "ERROR 'S' Expected a '\"' pair after it.");
+                }
+
+                if (engine.CurrentCommand != '"')
+                {
+                    return new Result(false, "ERROR 'S' Expected a '\"' pair after it.");
+                }
+
+                while (true)
+                {
+                    if (!engine.MoveReader())
+                    {
+                        return new Result(false, "ERROR: 'S' Expected a '\"' pair and only found one.");
+                    }
+                    if (engine.CurrentCommand == '"') break;
+                }
+
+                break;
+        }
+
         return new Result(true);
     }
 }

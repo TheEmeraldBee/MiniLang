@@ -38,15 +38,41 @@ public class FunctionModule : IModule
                     if (!engine.MoveReader()) { return new Result(false, "ERROR: Expected '(' to start function body but was not found for 'F'"); }
                 }
 
+                if (!engine.MoveReader())
+                {
+                    return new Result(false, "ERROR: Expected ')' to end function but was not found for 'F'");
+                }
+
                 var functionBody = "";
                 while (engine.CurrentCommand != ')')
                 {
-                    if (!engine.MoveReader())
+                    var startPos = engine.GetCodeIdx();
+                    
+                    var res = engine.HandleSkip();
+                    if (!res.QuerySuccess())
                     {
-                        return new Result(false, "ERROR: Expected ')' to end function body but was not found for 'F'");
+                        return res;
                     }
 
-                    functionBody += engine.CurrentCommand;
+                    var endPos = engine.GetCodeIdx();
+
+                    if (startPos == endPos)
+                    {
+                        if (!engine.MoveReader())
+                        {
+                            return new Result(false, "ERROR: Expected ')' to end function body but was not found for 'F'");
+                        }
+                        functionBody += engine.CurrentCommand;
+                    }
+                    else
+                    {
+                        for (var i = startPos + 1; i <= endPos; i++)
+                        {
+                            engine.SetReader(i);
+                            functionBody += engine.CurrentCommand;
+                        }
+                    }
+
                 }
                 engine.MoveReader();
 
